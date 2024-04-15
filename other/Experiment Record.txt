@@ -1,0 +1,62 @@
+Experimental Record
+
+1.
+    Date:2023.4.13
+    Version: 2nd
+    
+  1.1.
+      Route:DATA/day2con/1+1
+      
+      pbps.mat=['MMT t1','MMT b','MMT A','MMT b2','MMT beta','Bhls','Bfs','cda','MMT t 4243','MMT t 2434','MMT t 1213','MMT t 2131',
+                 'PDxcheng','rqxcheng','MMTrq','PLsubDL','rLsubqL','PLsubrL','DLsubqL','MMT P1','MMT P2','MMT P3','MMT P4','MMT P5',
+                 'MMT P6','MMT P7','MMT P8','MMT P9','MMT P10','MMT P11','MMT P12','Es','E1','E2','E3','E4','E5','E6','E7','E8','E9',
+                 'MMT Abrio R','MM Det','MM Norm','MM Trace','P vec','D vec','P dot D','LDOP','MMPD D','MMPD DELTA','MMPD delta','MMPD R',
+                 'MMCD lambda1','MMCD lambda2','MMCD lambda3','MMCD lambda4','MMCD P1','MMCD P2','MMCD P3','MMCD PI','MMCD PD','MMCD S'];# 63个
+                 
+  1.2.
+      pbps_2.mat=['MMT t1','FinalM14','FinalM41','MMT t 4243','MMT t 1213','FinalM44','MMT b','MMT beta','cda','PDxcheng','rqxcheng','MMTrq','PLsubDL',
+                  'rLsubqL','PLsubrL','MMT P1','MMT P2','MMT P4','MMT P5','MMT P7','MMT P9','MMT P10','MMT P11','E1','E2','E3','E4','E7','E8',
+                  'E9','P dot D','LDOP','MMCD lambda2']; #33个
+      
+      groups_2 / km_labels_2.mat: 16维 Mueller Matrix 通过计算旋转不变量 DL / PL / rL / qL / t1 / 且排除 PL / qL 模相等量, 最后精简为7维.
+                                  对 DL>0 / rL>0 / t1>0 进行指数变换, 其分布基本变为正态分布.
+                                  该次实验考虑 m11 的影响.
+                                  建立在19个pbps上.
+                                  
+ **** groups_3 / km_labels_3.mat: 同上.
+                                  该次实验不考虑 m11 的影响.
+                                  建立在19个pbps上.
+                                  
+  1.3.
+      pbp_3.mat=['MMT t1','FinalM14','FinalM41','MMT t 4243','MMT t 1213','FinalM44','MMT b','MMT beta','PDxcheng','rqxcheng','MMTrq','PLsubDL',
+                  'rLsubqL','MMT P1','MMT P4','MMT P7','MMT P9','MMT P10','E1','E2','E3','E4','E7','E8','E9','P dot D','MMCD lambda2']; #27个
+      pbp_4.mat=['MMT t1','FinalM14','FinalM41','MMT t 4243','MMT t 1213','FinalM44','MMT b','MMT beta','PDxcheng','rqxcheng','MMTrq','PLsubDL',
+                  'rLsubqL','MMT P10','E1','E4','E7','E9']; #18个
+                  
+      groups_4 / km_labels_4.mat: 对pbps也做数值变换, (MMT t 4243 / MMT t 1213 / MMT beta / MMTrq)
+                            
+      ##（效果不好，预测是虽然相关性变低了，但很多参数无意义甚至有不良影响，应当加入人工筛选。）
+      
+  1.4.
+      pbp_5.mat=['MMT t1','FinalM14','FinalM41','MMT_t_4243','MMT_t_1213','FinalM44','MMT_b','MMT_b2','MMT_beta','Bhls','Bfs','cda'
+                 'PDxcheng','rqxcheng','MMTrq','PLsubDL','rLsubqL','PLsubrL','DLsubqL','MMT P1','MMT P2','MMT P3','MMT P4','MMT P5',
+                 'MMT P6','MMT P7','MMT P8','MMT P9','MMT P10','MMT P11','MMT P12','Es','E1','E2','E3','E4','E5','E6','E7','E8','E9',
+                 'MM Det','MM Norm','MM Trace','P vec','D vec','P dot D','LDOP','MMPD D','MMPD DELTA','MMPD delta','MMPD R',
+                 'MMCD lambda1','MMCD lambda2','MMCD lambda3','MMCD lambda4','MMCD P1','MMCD P2','MMCD P3','MMCD PI','MMCD PD','MMCD S']; # 63个
+                 
+      pbp_6.mat=['MMT t1', 'FinalM14', 'FinalM41', 'MMT_t_4243', 'MMT_t_1213', 'FinalM44', 'PLsubDL','PLsubrL','MMT P9','MMT P10','E7',
+                 'P dot D' ]; # 12个 
+                 
+      groups_6 / km-labels_6.mat: 对pbp做指数变换，对MM做指数变换。用pbp_6的数据。
+      
+      ## 效果不好。
+      
+      groups_7 / km__labels_7.mat: pbp只用6个缪勒旋转不变量
+      
+      # 效果不好
+      
+ **** groups_8 / km_labels_8.mat: pbps_6.mat 只求均值. 6维旋转不变矩阵量.
+                                  total_groups 先对 0 3 4 8 指数变换，然后标准化
+                                  gmm 聚类
+                                  
+ **** groups_9 / km_labels_9.mat: pbps_1.mat 只求均值. 6维旋转不变矩阵量。
