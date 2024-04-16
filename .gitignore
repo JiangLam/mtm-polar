@@ -1,1 +1,6 @@
+# key是Github在mywin上的本地密钥
 key.txt
+
+# 临时文件
+__pycache__
+Filepath\__pycache__
